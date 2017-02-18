@@ -41,3 +41,11 @@ Q3.HDFS federation separates the namespace layer and storage layer. It enables t
 •	HDFS federation allows scaling the name service horizontally. It uses several namenodes or namespaces which are independent of each other. These independent namenodes are federated i.e. they don’t require inter coordination. These datanodes are used as common storage by all the namenodes. Each datanode is registered with all the namenodes in the cluster. These datanodes send periodic reports and responds to the commands from the name nodes. We have a block pool which is a set of blocks that belong to a single namespace. In a cluster, the datanodes stores blocks for all the block pools. Each block pool is managed independently. This enables the name space to generate block ids for new blocks without informing other namespaces. If one namenode fails for any reason, the datanode keeps on serving from other namenodes.
 •	One namespace and its block are collectively called Namespace Volume. When a namespace or a namenode is deleted the corresponding block pool at the datanode is deleted automatically. In the process of cluster up-gradation, each namespace volume is upgraded as a unit.
 
+
+4.Configuration files that are to be edited for sure while installing a hadoop cluster
+The four files that need to be configured explicitly while setting up a single node hadoop cluster are:
+
+Core-site.xml
+HDFS-site.xml
+YARN-site.xml
+xml
