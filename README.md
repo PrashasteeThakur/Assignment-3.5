@@ -46,6 +46,33 @@ Q3.HDFS federation separates the namespace layer and storage layer. It enables t
 The four files that need to be configured explicitly while setting up a single node hadoop cluster are:
 
 Core-site.xml
+Settings that need to be done in Core-site.xml
+Some of the important properties are:
+
+Configuring the name node address
+Configuring the rack awareness factor
+Selecting the type of security
+
 HDFS-site.xml
+
+The properties inside this xml file deals with storage procedure inside HDFS of Hadoop. Some of the important properties are:
+Configure port access
+Manages ssl client authentication
+Controls Network interface
+Changes file permission
+
 YARN-site.xml
-xml
+In Hadoop v1.x TaskTraker and JobTracker were present to handle the job of allocating resources to processes.
+YARN has ResourceManager settings which effects resource allocation with node manager and application manager. Some of the important properties are:
+WebAppProxy Configuration
+MapReduce Configuration
+NodeManager Configuration
+ResourceManager Configuration
+IPC Configuration
+
+mapred-site.xml
+When Hadoop runs for any analysis of dataset, the framework at runtime for MapReduce jobs is a vast set of rules for assigning jobs to slave and maintain the jobs records.In Hadoop2.x YARN is introduced to help this framework to work efficiently and take the workload for job related assignments. It is again a large unit of Hadoop ecosystem which helps running the map and reduce the collaboration with YARN.Some of the important features it handles are:
+
+Node health script variables
+Proxy Configuration
+Job Notification Configuration
